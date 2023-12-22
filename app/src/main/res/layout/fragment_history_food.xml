@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.history.food.HistoryFoodFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+
+        <ImageView
+            android:id="@+id/historyFood_btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riwayat"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:fontFamily="@font/product_sans_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <ImageView
+        android:id="@+id/historyFood_ivFood"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:src="@drawable/sarapan"
+        android:padding="16dp"
+        android:background="@drawable/bg_button"
+        android:backgroundTint="@color/second_primary"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/historyFood_tvFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sarapan"
+        android:layout_gravity="center"
+        android:layout_marginTop="18dp"
+        android:paddingTop="8dp"
+        android:fontFamily="@font/product_sans_bold"
+        android:textColor="@color/black"
+        android:textSize="32sp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historyFood_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        tools:listitem="@layout/item_list"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

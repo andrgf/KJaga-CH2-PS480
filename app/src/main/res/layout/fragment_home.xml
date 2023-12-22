@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/home_tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/product_sans_bold"
+        android:text="@string/name_user"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tvHai"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="@font/product_sans_bold"
+        android:text="Hai,"
+        android:textColor="@color/black"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_tvToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="22dp"
+        android:fontFamily="@font/product_sans_reguler"
+        android:text="Hari ini"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_scan"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_tvName">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_reguler"
+            android:text="@string/scan"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/home_btn_scan"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/product_sans_reguler"
+            android:text="@string/scan_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/home_ib_scan"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/scan"
+            android:backgroundTint="#00000000"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/home_pb_status"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:indeterminateOnly="false"
+        android:progress="50"
+        android:progressDrawable="@drawable/custom_pb"
+        android:rotation="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/home_pb_status"
+        app:layout_constraintEnd_toEndOf="@+id/home_pb_status"
+        app:layout_constraintStart_toStartOf="@+id/home_pb_status"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/home_tvKkal_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/kkal"
+                android:textColor="@color/black"
+                android:textSize="38sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="Kkal"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/home_tvKkal_unCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_reguler"
+            android:text="/2000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_pb_status">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_calories"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:progressDrawable="@drawable/custom_pb_horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/gula"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_karbo"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:progressDrawable="@drawable/custom_pb_horizontal_red"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/karbo"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_lemak"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:progressDrawable="@drawable/custom_pb_horizontal_ungu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/lemak"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_protein"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:progressDrawable="@drawable/custom_pb_horizontal_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/protein"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0.dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        tools:listitem="@layout/item_list"
+        android:padding="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

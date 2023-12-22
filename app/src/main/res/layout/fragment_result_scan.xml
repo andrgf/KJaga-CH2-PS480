@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.result.ResultScanFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+
+        <ImageView
+            android:id="@+id/result_btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_bold"
+            android:text="@string/hasil_scan"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/result_img"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_scan"
+            android:backgroundTint="@color/second_primary"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/result_tvFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="Name Food"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/product_sans_reguler"
+            android:text="@string/total_nutrisi"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/add_tvTotalNutrisi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/product_sans_bold"
+            android:text="200 Kkal"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
+
+        <Button
+            android:id="@+id/result_btnTambahkan"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_button"
+            android:backgroundTint="@color/primary"
+            android:text="@string/tambahkan"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

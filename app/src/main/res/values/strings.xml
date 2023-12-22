@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">KJaga</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_riwayat">Riwayat</string>
+    <string name="title_profile">Profile</string>
+    <string name="scan">Scan sekarang untuk \nmendapatkan informasi \nnutrisi makananmu!</string>
+    <string name="scan_btn">Scan</string>
+    <string name="karbo">Karbo</string>
+    <string name="kalori">Kalori</string>
+    <string name="lemak">Lemak</string>
+    <string name="protein">Protein</string>
+    <string name="kkal">200</string>
+    <string name="food">Name Food</string>
+    <string name="search">Temukan makananmu</string>
+    <string name="profile">Profile</string>
+    <string name="name_user">Name User</string>
+    <string name="email">Example@gamil.com</string>
+    <string name="keluar">Keluar</string>
+    <string name="date">Senin, 23 Des</string>
+    <string name="hasil_scan">Hasil scan</string>
+    <string name="total_nutrisi">Total nutrisi</string>
+    <string name="tambahkan">Tambahkan</string>
+    <string name="makanan">Makanan</string>
+    <string name="porsi">Porsi</string>
+    <string name="sarapan">Sarapan</string>
+    <string name="gula">Gula</string>
+    <string name="simpan">Simpan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="temukan_makananmu">Temukan Makananmu</string>
+</resources>

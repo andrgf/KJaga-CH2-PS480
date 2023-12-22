@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/splashFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.kjaga.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_resultScanFragment"
+            app:destination="@id/resultScanFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.kjaga.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_riwayat"
+        android:name="com.example.kjaga.ui.history.HistoryFragment"
+        android:label="@string/title_riwayat"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_navigation_riwayat_to_historyFoodFragment"
+            app:destination="@id/historyFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.kjaga.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultScanFragment"
+        android:name="com.example.kjaga.ui.result.ResultScanFragment"
+        android:label="fragment_result_scan"
+        tools:layout="@layout/fragment_result_scan" >
+        <action
+            android:id="@+id/action_resultScanFragment_to_addFoodFragment"
+            app:destination="@id/addFoodFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addFoodFragment"
+        android:name="com.example.kjaga.ui.addfood.AddFoodFragment"
+        android:label="fragment_add_food"
+        tools:layout="@layout/fragment_add_food" >
+        <action
+            android:id="@+id/action_addFoodFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFoodFragment"
+        android:name="com.example.kjaga.ui.history.food.HistoryFoodFragment"
+        android:label="fragment_history_food"
+        tools:layout="@layout/fragment_history_food" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.kjaga.ui.auth.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.kjaga.ui.auth.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.kjaga.ui.profile.edit.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.kjaga.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>

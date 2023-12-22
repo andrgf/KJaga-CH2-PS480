@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.addfood.AddFoodFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+
+        <ImageView
+            android:id="@+id/add_btnBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/makanan"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:fontFamily="@font/product_sans_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"/>
+
+    <ImageView
+        android:id="@+id/add_img"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        tools:src="@tools:sample/avatars" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/second_primary"
+        android:background="@drawable/bg_scan">
+
+        <TextView
+            android:id="@+id/result_tvFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name Food"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/product_sans_bold"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Spinner
+        android:id="@+id/add_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/add_etPorsi"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="14dp"
+        android:hint="@string/porsi"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_list"/>
+
+    <TextView
+        android:id="@+id/add_tvTotalNutrisi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200 Kkal"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:fontFamily="@font/product_sans_bold"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_btnTambahkan"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/tambahkan"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/primary"
+        android:background="@drawable/bg_button"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"/>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

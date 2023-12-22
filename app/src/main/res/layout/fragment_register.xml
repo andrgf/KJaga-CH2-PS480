@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/primary"
+    tools:context=".ui.auth.register.RegisterFragment">
+
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/register_etName"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Name"
+        android:layout_marginStart="24sp"
+        android:layout_marginEnd="24sp"/>
+
+    <EditText
+        android:id="@+id/register_etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Email"
+        android:layout_marginStart="24sp"
+        android:layout_marginEnd="24sp"/>
+
+    <EditText
+        android:id="@+id/register_etPass"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Password"
+        android:layout_marginStart="24sp"
+        android:layout_marginEnd="24sp"/>
+
+    <EditText
+        android:id="@+id/register_etPassConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Confirm Password"
+        android:layout_marginStart="24sp"
+        android:layout_marginEnd="24sp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/register_btnDaftar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Daftar"
+        android:textColor="@color/black"
+        android:background="@drawable/bg_button"
+        app:backgroundTint="@color/second_primary"
+        android:textAllCaps="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="24sp"
+        android:layout_marginEnd="24sp"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah punya akun?"
+            android:textColor="@color/white"
+            android:fontFamily="@font/product_sans_reguler"/>
+
+        <TextView
+            android:id="@+id/register_tvMasuk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masuk"
+            android:textColor="@color/blue"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/product_sans_reguler"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ProgressBar
+        android:id="@+id/register_pb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

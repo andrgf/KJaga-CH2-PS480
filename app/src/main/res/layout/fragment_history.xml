@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.history.HistoryFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="168dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_date"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/history_tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ProgressBar
+        android:id="@+id/home_pb_status"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="16dp"
+        android:indeterminateOnly="false"
+        android:progress="10"
+        android:progressDrawable="@drawable/custom_pb"
+        android:rotation="50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/home_pb_status"
+        app:layout_constraintEnd_toEndOf="@+id/home_pb_status"
+        app:layout_constraintStart_toStartOf="@+id/home_pb_status"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/home_tvKkal_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/kkal"
+                android:textColor="@color/black"
+                android:textSize="38sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans_reguler"
+                android:text="Kkal"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/home_tvKkal_unCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_reguler"
+            android:text="/2000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_pb_status">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_calories"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:progress="10"
+                android:progressDrawable="@drawable/custom_pb_horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/gula"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_karbo"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:progressDrawable="@drawable/custom_pb_horizontal_red"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/karbo"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_lemak"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:progressDrawable="@drawable/custom_pb_horizontal_ungu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/lemak"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/home_pb_protein"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:progress="60"
+                android:progressDrawable="@drawable/custom_pb_horizontal_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_pb_status" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/protein"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/history_btnSarapan"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_scan"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/sarapan" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/product_sans_reguler"
+                    android:text="Sarapan"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/history_btnMakanSiang"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/bg_scan"
+            android:backgroundTint="@color/red"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/makan_siang" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/product_sans_reguler"
+                    android:text="Makan Siang"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat2">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/history_btnMakanMalam"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginEnd="13dp"
+            android:background="@drawable/bg_scan"
+            android:backgroundTint="@color/blue"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/makan_malam" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/product_sans_reguler"
+                    android:text="Makan Malam"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/history_btnCemilan"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:background="@drawable/bg_scan"
+            android:backgroundTint="@color/second_primary"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/cemilan" />
+
+                <TextView
+                    android:id="@+id/textView0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/product_sans_reguler"
+                    android:text="Cemilan"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
