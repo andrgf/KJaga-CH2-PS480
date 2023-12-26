@@ -41,6 +41,8 @@ class ResultScanFragment : Fragment() {
         val predictId = arguments?.getString("predictionId")
         val handler = Handler()
 
+        binding.contentContainer.visibility = View.GONE
+
         handler.postDelayed({
             viewModel.getScanResult(predictId.toString()).observe(viewLifecycleOwner) { uiState ->
                 when (uiState) {
@@ -51,6 +53,8 @@ class ResultScanFragment : Fragment() {
 
                     is UiState.Success -> {
                         binding.contentContainer.visibility = View.VISIBLE
+                        binding.progressBar.visibility = View.GONE
+
                         val result = uiState.data.foods?.get(0)?.food?.name
                         bundle.putString("foodName", result)
                         val totalEnergy = uiState.data.foods?.get(0)?.portion?.nutrition?.energyKkal.toString()
@@ -64,11 +68,9 @@ class ResultScanFragment : Fragment() {
                             bundle.putInt("foodPortion", foodPortion)
                         }
 
-
                         binding.resultTvFood.text = result
                         binding.addTvTotalNutrisi.text =
                             "$totalEnergy Kkal"
-                        binding.progressBar.visibility = View.GONE
                     }
 
                     is UiState.Error -> {

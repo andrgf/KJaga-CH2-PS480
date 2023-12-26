@@ -23,7 +23,6 @@ import retrofit2.http.Url
 
 interface ApiService {
 
-    @FormUrlEncoded
     @POST("/users")
     suspend fun register(
         @Query("email") email: String,
