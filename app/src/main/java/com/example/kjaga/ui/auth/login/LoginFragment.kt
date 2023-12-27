@@ -63,22 +63,25 @@ class LoginFragment : Fragment() {
         val password = binding.loginEtPass.text.toString()
 
         viewModel.loginUser(email, password).observe(requireActivity()) {
-            when(it) {
-                is UiState.Loading -> {
-                    Log.d("Login", "Loading")
-                    binding.loginPb.visibility = View.VISIBLE
-                }
-                is UiState.Success -> {
-                    binding.loginPb.visibility= View.GONE
-                    Log.d("Login", "Success")
-                    val data = it.data
-                    saveToken(data)
-                }
-                is UiState.Error -> {
-                    Log.d("Login", "Error")
-                }
-                else -> {
+            if (it != null) {
+                when(it) {
+                    is UiState.Loading -> {
+                        Log.d("Login", "Loading")
+                        binding.loginPb.visibility = View.VISIBLE
+                    }
+                    is UiState.Success -> {
+                        binding.loginPb.visibility= View.GONE
+                        Log.d("Login", "Success")
+                        val data = it.data
+                        saveToken(data)
+                    }
+                    is UiState.Error -> {
+                        Log.d("Login", "Error")
+                        Toast.makeText(requireContext(), "Login Gagal", Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {
 
+                    }
                 }
             }
         }

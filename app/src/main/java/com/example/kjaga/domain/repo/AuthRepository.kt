@@ -1,12 +1,16 @@
 package com.example.kjaga.domain.repo
 
+import android.os.Looper
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.example.kjaga.data.auth.LoginResponse
+import com.example.kjaga.data.auth.Register
 import com.example.kjaga.data.auth.RegisterResponse
+import com.example.kjaga.data.auth.User
 import com.example.kjaga.domain.api.ApiService
 import com.example.kjaga.domain.api.UiState
+import java.util.logging.Handler
 
 class AuthRepository private constructor(private val apiService: ApiService) {
 
@@ -20,8 +24,9 @@ class AuthRepository private constructor(private val apiService: ApiService) {
         try {
             val response = apiService.register(email, name, password, confirmPassword)
             emit(UiState.Success(response))
+            Log.d("RegisterViewModel", "Success")
         } catch (e: Exception) {
-            Log.e("RegisterViewModel", "register: ${e.message.toString()}")
+            Log.e("RegisterViewModel", "register: ${e.message}")
             emit(UiState.Error(e.message.toString()))
         }
     }

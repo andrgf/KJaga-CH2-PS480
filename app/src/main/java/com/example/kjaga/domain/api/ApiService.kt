@@ -1,7 +1,9 @@
 package com.example.kjaga.domain.api
 
 import com.example.kjaga.data.auth.LoginResponse
+import com.example.kjaga.data.auth.Register
 import com.example.kjaga.data.auth.RegisterResponse
+import com.example.kjaga.data.auth.User
 import com.example.kjaga.data.food.HistoryResponse2
 import com.example.kjaga.data.food.MealDiariesResponse
 import com.example.kjaga.data.food.PredictionResponse
@@ -23,7 +25,7 @@ import retrofit2.http.Url
 
 interface ApiService {
 
-    @POST("/users")
+    @POST("/users/registerV2")
     suspend fun register(
         @Query("email") email: String,
         @Query("name") name: String,

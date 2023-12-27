@@ -103,7 +103,7 @@ class HomeFragment : Fragment() {
 
                 is UiState.Success -> {
                     val name = it.data.userByToken.name
-                    binding.homeTvName.text = name
+                    binding.homeTvName.text = name.uppercase()
                 }
                 is UiState.Error -> {
                 }
@@ -202,4 +202,6 @@ class HomeFragment : Fragment() {
         val progress = (currentValue!! / max!!) * 100
         return progress.toInt()
     }
+
+
 }

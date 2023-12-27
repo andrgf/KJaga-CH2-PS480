@@ -26,6 +26,7 @@ class ViewModelFactory private constructor(
         if (modelClass.isAssignableFrom(RegisterViewModel::class.java)) {
             return RegisterViewModel(authRepository) as T
         }
+
         if (modelClass.isAssignableFrom(SearchViewModel::class.java)) {
             return SearchViewModel(mainRepository) as T
         }

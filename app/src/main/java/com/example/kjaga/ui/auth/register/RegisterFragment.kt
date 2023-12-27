@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.kjaga.R
+import com.example.kjaga.data.auth.Register
 import com.example.kjaga.data.auth.RegisterResponse
 import com.example.kjaga.databinding.FragmentRegisterBinding
 import com.example.kjaga.domain.api.UiState
@@ -53,29 +54,30 @@ class RegisterFragment : Fragment() {
     }
 
     private fun register() {
-        val name = binding.registerEtName.text.toString()
+
         val email = binding.registerEtEmail.text.toString()
+        val name = binding.registerEtName.text.toString()
         val password = binding.registerEtPass.text.toString()
         val confirmPass = binding.registerEtPassConfirm.text.toString()
 
-        viewModel.registerUser(email, name, password, confirmPass).observe(viewLifecycleOwner) {uiState ->
-                when(uiState) {
+        viewModel.registerUser(email, name, password, confirmPass).observe(requireActivity()) {
+            if (it != null) {
+                when(it) {
                     is UiState.Loading -> {
                         binding.registerPb.visibility = View.VISIBLE
                     }
                     is UiState.Success -> {
                         binding.registerPb.visibility = View.GONE
                         Log.d("Register", "Success")
-                        Toast.makeText(requireContext(), uiState.data.message, Toast.LENGTH_SHORT).show()
-                        login()
+                        Toast.makeText(requireContext(), "Register Berhasil", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
                     }
                     is UiState.Error -> {
                         binding.registerPb.visibility = View.GONE
                         Log.d("Register", "Error")
-                        Toast.makeText(requireContext(), uiState.error, Toast.LENGTH_SHORT).show()
-                        Log.d("Data Register", "email: $email, name: $name, pass: $password, confirm: $confirmPass")
                     }
                 }
+            }
         }
     }
 

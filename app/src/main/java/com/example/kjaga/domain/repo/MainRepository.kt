@@ -41,8 +41,10 @@ class MainRepository private constructor(
         try {
             val response = apiService.history(date, token)
             emit(UiState.Success(response))
+            Log.d("History", "Success")
         } catch (e: Exception) {
             emit(UiState.Error(e.message.toString()))
+            Log.d("History", "Failed")
         }
     }
 
